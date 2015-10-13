@@ -15,19 +15,25 @@
 //= require d3
 //= require_tree .
 
+function updateCourse(button) {
+button.disabled = true;
+button.form.submit();
+
+}
+
 
  function hideThis() {
-  var number = document.getElementsByClassName("row").length;
-  var location = document.getElementsByClassName("row")[number -1];
+  var number = document.getElementsByClassName("association container").length;
+  var location = document.getElementsByClassName("association container")[number -1];
   location.style.display = 'none';
 
 }
 
 
  function showThis() {
-   var number = document.getElementsByClassName("row").length;
-   var location = document.getElementsByClassName("row")[number -1];
-   location.style.display = 'block';
+   var number = document.getElementsByClassName("association container").length;
+   var location = document.getElementsByClassName("association container")[number -1];
+   location.style.display = '';
  }
 
 function onlyOnce() {
