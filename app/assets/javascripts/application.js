@@ -23,18 +23,22 @@ button.form.submit();
 
 
  function hideThis() {
-  var number = document.getElementsByClassName("association container").length;
-  var location = document.getElementsByClassName("association container")[number -1];
-  location.style.display = 'none';
-
+   last = $(".association.container").last()
+   if (last) {
+     last.hide();
+   }
 }
+
+$(hideThis);
 
 
  function showThis() {
-   var number = document.getElementsByClassName("association container").length;
-   var location = document.getElementsByClassName("association container")[number -1];
-   location.style.display = '';
+    $(".association.container").last().show();
  }
+
+ $(function () {
+  $(".new-association").on("click", showThis);
+ });
 
 function onlyOnce() {
   var findButton = document.getElementsByClassName('btn').length;
@@ -52,3 +56,13 @@ function findStuff() {
   policies = document.getElementsByName("#anchor-policies").href;
 
 }
+
+
+function disableButton() {
+  $(".btn").last().prop('disabled', true);
+  $("form").submit();
+ }
+
+$(function (){
+  $("input[type=submit]").on("click", disableButton);
+})

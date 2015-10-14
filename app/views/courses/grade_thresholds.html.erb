@@ -49,14 +49,10 @@
 
 
 
-<%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, "javascript:void(0)", class: "btn btn-success new-association", "data-index" => i, onclick: "showThis();" %>
+<%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, "javascript:void(0)", class: "btn btn-success new-association", "data-index" => i %>
 
 
   <div class="actions">
    <%= f.submit class: "btn", onclick: "updateCourse(this);" %>
  </div>
 <% end %>
-
-<script>
-  hideThis();
-</script>
